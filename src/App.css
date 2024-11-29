@@ -25,15 +25,20 @@ body {
     margin-right: 2em;
   }
   
-  .navbar li a {
-    text-decoration: none;
+  .navbar button {
+    background: none;
+    border: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    padding: 0.5em 1em;
   }
   
-  .navbar li a:hover {
+  .navbar button:hover {
     color: #f4a261;
+    transform: scale(1.1);  /* Adds hover effect for scaling */
   }
   
   .welcome-section {

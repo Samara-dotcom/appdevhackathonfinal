@@ -3,6 +3,8 @@ import "./App.css";
 
 const App: React.FC = () => {
   
+  const [activeTab, setActiveTab] = useState("home");
+
   const slideShows = [
     { title: "Lecture 1", link: "https://docs.google.com/presentation/d/1VP9mrEZJZ9ALk2dBwadcGkWBg5twjUbM6VFZ7Fn3Vkk/edit?usp=sharing" },
     { title: "Lecture 2", link: "https://docs.google.com/presentation/d/1wO047LhrT73QIcC5WzFhzGOtYhxap3aPq-nYbjmOSKk/edit?usp=sharing" },
@@ -14,54 +16,65 @@ const App: React.FC = () => {
 
   const [currentSlideShow, setCurrentSlideShow] = useState(0)
   
-  const nextSlide = () => {
-    setCurrentSlideShow((currentSlideShow+1) % slideShows.length)
-  };
-
-  const prevSlide = () => {
-    setCurrentSlideShow((currentSlideShow - 1 + slideShows.length) % slideShows.length)
-  };
 
   return (
     <div className="App">
       <header className="navbar">
         <nav>
-          <ul>
-            <li><a href="#attendance">Attendance</a></li>
-            <li><a href="#lecture-slides">Lecture Slides</a></li>
-            <li><a href="#hw-assignments">HW Assignments</a></li>
-            <li><a href="#mentor-groups">Mentor Groups</a></li>
+        <ul>
+            <li>
+             <button onClick={() => setActiveTab("home")}>Home</button>
+            </li>
+            <li>
+              <button onClick={() => setActiveTab("lecture-slides")}>Lecture Slides</button>
+            </li>
+            <li>
+              <button onClick={() => setActiveTab("attendance")}>Attendance</button>
+            </li>
+            <li>
+              <button onClick={() => setActiveTab("hw-assignments")}>HW Assignments</button>
+            </li>
+            <li>
+              <button onClick={() => setActiveTab("mentor-groups")}>Mentor Groups</button>
+            </li>
           </ul>
         </nav>
       </header>
-      <main className="welcome-section">
-        <h1>Welcome to the Bootcamp Portal!</h1>
-        <p>Your gateway to managing attendance, accessing lecture slides, completing assignments, and connecting with mentors.</p>
-        <section id = "lecture-slides"> 
-          <h2> Lecture Slides </h2>
-         <div className = "lecture-buttons">
-          {slideShows.map((slideShow, index) => (
-            <button
-            key={index}
-            onClick={() => setCurrentSlideShow(index)} 
-          >
-            {slideShow.title}
-          </button>
-
-          ))}
-
-         </div>
-         <iframe
-          src={`https://docs.google.com/presentation/d/${slideShows[currentSlideShow].link.split('/d/')[1].split('/')[0]}/embed`}
-          width="960"
-          height="569"
-          style={{ border: "none" }}  
-          allowFullScreen={true} 
-          ></iframe>
-
-
-        </section>
+      <main className="main-content">
+     
+        {activeTab === "home" && (
+          <div className="welcome-section">
+            <h1>Welcome to the Bootcamp Portal!</h1>
+            <p>Your gateway to managing attendance, accessing lecture slides, completing assignments, and connecting with mentors.</p>
+          </div>
+        )}
+       
+       {activeTab === "lecture-slides" && (
+          <section id="lecture-slides">
+            <h2>Lecture Slides</h2>
+            <div className="lecture-buttons">
+              {slideShows.map((slideShow, index) => (
+                <button key={index} onClick={() => setCurrentSlideShow(index)}>
+                  {slideShow.title}
+                </button>
+              ))}
+            </div>
+            <iframe
+              src={`https://docs.google.com/presentation/d/${slideShows[currentSlideShow].link.split('/d/')[1].split('/')[0]}/embed`}
+              width="960"
+              height="569"
+              style={{ border: "none" }}
+              allowFullScreen={true}
+            ></iframe>
+          </section>
+        )}
       
+        {/* Add other sections here */}
+         {activeTab === "attendance" && <section><h2>Attendance</h2></section>}
+        {activeTab === "hw-assignments" && <section><h2>HW Assignments</h2></section>}
+        {activeTab === "mentor-groups" && <section><h2>Mentor Groups</h2></section>}
+
+
       </main>
     </div>
   );
