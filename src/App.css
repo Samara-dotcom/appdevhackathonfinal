@@ -6,7 +6,13 @@ body {
     text-align: center;
     overflow-x: hidden;
   }
-  
+  #mainHeading {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+  #underHeading {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
   .navbar {
     background: rgba(0, 0, 0, 0.8);
     padding: 1em 0;

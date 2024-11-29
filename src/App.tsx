@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import logo from './logo.png'; // Tell webpack this JS file uses this image
 
 const App: React.FC = () => {
   
@@ -44,8 +45,8 @@ const App: React.FC = () => {
      
         {activeTab === "home" && (
           <div className="welcome-section">
-            <h1>Welcome to the Bootcamp Portal!</h1>
-            <p>Your gateway to managing attendance, accessing lecture slides, completing assignments, and connecting with mentors.</p>
+            <h1 id="mainHeading">Welcome to the Bootcamp Portal!</h1>
+            <p id="underHeading">Your gateway to managing attendance, accessing lecture slides, completing assignments, and connecting with mentors.</p>
           </div>
         )}
        
