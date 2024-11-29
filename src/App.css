@@ -57,3 +57,28 @@ body {
     line-height: 1.5;
   }
   
+  button {
+    background-color: #1B3B6F;
+    color: white; 
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 5px;
+   cursor: pointer; 
+   transition: background-color 0.3s, transform 0.2s;
+
+  }
+
+  button:hover {
+    background-color: #1C7293; 
+    transform: scale(1.05); 
+  }
+  
+  button:focus {
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.5); 
+  }
+  
+  button:active {
+    background-color: #4a89e5; 
+  }
