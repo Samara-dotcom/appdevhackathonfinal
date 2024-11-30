@@ -72,7 +72,7 @@ const App: React.FC = () => {
       
         {/* Add other sections here */}
          {activeTab === "attendance" && <section><h2>Attendance</h2></section>}
-        {activeTab === "hw-assignments" && <section><h2>HW Assignments</h2> <Homework /> </section>}
+        {activeTab === "hw-assignments" && <section> <Homework /> </section>}
         {activeTab === "mentor-groups" && <section><h2>Mentor Groups</h2></section>}
 
 
