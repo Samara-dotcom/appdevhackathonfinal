@@ -33,7 +33,7 @@ const App: React.FC = () => {
               <button onClick={() => setActiveTab("attendance")}>Attendance</button>
             </li>
             <li>
-              <button onClick={() => setActiveTab("hw-assignments")}>Homework</button>
+              <button onClick={() => setActiveTab("hw-assignments")}>HW Assignments</button>
             </li>
             <li>
               <button onClick={() => setActiveTab("mentor-groups")}>Mentor Groups</button>
@@ -72,7 +72,7 @@ const App: React.FC = () => {
       
         {/* Add other sections here */}
          {activeTab === "attendance" && <section><h2>Attendance</h2></section>}
-         {activeTab === "hw-assignments" && <Homework />}
+        {activeTab === "hw-assignments" && <section> <Homework /> </section>}
         {activeTab === "mentor-groups" && <section><h2>Mentor Groups</h2></section>}
 
 
