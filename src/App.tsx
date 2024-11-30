@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Homework from "./Homework";
 
 const App: React.FC = () => {
   
@@ -32,7 +33,7 @@ const App: React.FC = () => {
               <button onClick={() => setActiveTab("attendance")}>Attendance</button>
             </li>
             <li>
-              <button onClick={() => setActiveTab("hw-assignments")}>HW Assignments</button>
+              <button onClick={() => setActiveTab("hw-assignments")}>Homework</button>
             </li>
             <li>
               <button onClick={() => setActiveTab("mentor-groups")}>Mentor Groups</button>
@@ -71,7 +72,7 @@ const App: React.FC = () => {
       
         {/* Add other sections here */}
          {activeTab === "attendance" && <section><h2>Attendance</h2></section>}
-        {activeTab === "hw-assignments" && <section><h2>HW Assignments</h2></section>}
+         {activeTab === "hw-assignments" && <Homework />}
         {activeTab === "mentor-groups" && <section><h2>Mentor Groups</h2></section>}
 
 
