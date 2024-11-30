@@ -49,7 +49,7 @@ const Homework: React.FC = () => {
       link: "https://forms.gle/65u4Er1kCaEMJioa7",
       submitted: false,
       image: twitterImage
-    }   
+    }
   ]);
 
   useEffect(() => {
@@ -59,27 +59,31 @@ const Homework: React.FC = () => {
     }
   }, []);
 
-  const markAsCompleted = (index: number) => {
-    homeworkData[index].submitted = true; 
-    setHomeworkData([...homeworkData]); 
-  
-    localStorage.setItem("homeworkData", JSON.stringify(homeworkData)); 
+  const markAsCompleted = (homework: any) => {
+    const newHomeworkData = homeworkData.map((hw) => {
+      if (hw === homework) {
+        return { ...hw, submitted: true };
+      }
+      return hw;
+    });
+
+    setHomeworkData(newHomeworkData);
+    localStorage.setItem("homeworkData", JSON.stringify(newHomeworkData));
   };
-  
 
   const today = new Date();
-  today.setHours(0, 0, 0, 0); 
+  today.setHours(0, 0, 0, 0);
 
   const upcomingAssignment = homeworkData
-  .filter(hw => new Date(hw.dueDate) >= today && !hw.submitted)
-  .sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime())[0];
+    .filter(hw => new Date(hw.dueDate) >= today && !hw.submitted)
+    .sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime())[0];
 
   const overdueAssignments = homeworkData.filter(
     hw => new Date(hw.dueDate) < today && !hw.submitted
   );
 
   const formatInstructions = (text: string) => {
-    const urlRegex = /(https?:\/\/[^\s]+)/g; 
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.split(urlRegex).map((part, index) =>
       urlRegex.test(part) ? (
         <a key={index} href={part} target="_blank" rel="noopener noreferrer">
@@ -100,14 +104,18 @@ const Homework: React.FC = () => {
           <div className="homework-item">
             <h3>{upcomingAssignment.title}</h3>
             {upcomingAssignment.image && (
-              <img src={upcomingAssignment.image} alt={`${upcomingAssignment.title} Image`} className="homework-image" />
+              <img
+                src={upcomingAssignment.image}
+                alt={`${upcomingAssignment.title} Image`}
+                className="homework-image"
+              />
             )}
             <p><strong>Due Date:</strong> {upcomingAssignment.dueDate}</p>
             <p><strong>Instructions:</strong> {formatInstructions(upcomingAssignment.instructions)}</p>
-            <a href={upcomingAssignment.link} target="_blank" rel="noopener noreferrer">Submit Here</a>
-            <button onClick={() => markAsCompleted(homeworkData.indexOf(upcomingAssignment))}>
-              Mark as Completed
-            </button>
+            {upcomingAssignment.link && (
+              <a href={upcomingAssignment.link} target="_blank" rel="noopener noreferrer">Submit Here</a>
+            )}
+            <button onClick={() => markAsCompleted(upcomingAssignment)}>Mark as Completed</button>
           </div>
         ) : (
           <p>No upcoming assignments.</p>
@@ -117,16 +125,22 @@ const Homework: React.FC = () => {
       <div>
         <h3>Overdue Assignments</h3>
         {overdueAssignments.length > 0 ? (
-          overdueAssignments.map((homework, index) => (
-            <div key={index} className="homework-item">
+          overdueAssignments.map((homework) => (
+            <div key={homework.week} className="homework-item">
               <h3>{homework.title}</h3>
               {homework.image && (
-                <img src={homework.image} alt={`${homework.title} Image`} className="homework-image" />
+                <img
+                  src={homework.image}
+                  alt={`${homework.title} Image`}
+                  className="homework-image"
+                />
               )}
               <p><strong>Due Date:</strong> {homework.dueDate}</p>
               <p><strong>Instructions:</strong> {formatInstructions(homework.instructions)}</p>
-              <a href={homework.link} target="_blank" rel="noopener noreferrer">Submit Here</a>
-              <button onClick={() => markAsCompleted(index)}>Mark as Completed</button>
+              {homework.link && (
+                <a href={homework.link} target="_blank" rel="noopener noreferrer">Submit Here</a>
+              )}
+              <button onClick={() => markAsCompleted(homework)}>Mark as Completed</button>
             </div>
           ))
         ) : (
