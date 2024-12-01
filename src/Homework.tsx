@@ -44,7 +44,7 @@ const Homework: React.FC = () => {
     {
       week: 5,
       title: "Homework 5- React and Twitter Clone",
-      dueDate: "2024-11-31",
+      dueDate: "2024-12-8",
       instructions: "You do not need to add the functionality to create new tweets or comments, you simply need to display the tweets on the screen and have the ability to like and unlike the tweets. https://github.com/KiberVG/bootcampfall2024-twitterclone. Reading assignments: https://react.dev/learn/rendering-lists (no challenges), https://react.dev/learn/state-a-components-memory (complete challenges), https://react.dev/learn/render-and-commit (no challenges), https://react.dev/learn/updating-objects-in-state (no challenges). It’s important that the reading gets done before Tuesday’s lecture even if you can’t submit the form yet.",
       link: "https://forms.gle/65u4Er1kCaEMJioa7",
       submitted: false,
@@ -95,6 +95,14 @@ const Homework: React.FC = () => {
     );
   };
 
+  const formatDate = (dateString: string) => {
+    const dateParts = dateString.split('-');
+    const date = new Date(Number(dateParts[0]), Number(dateParts[1]) - 1, Number(dateParts[2]));
+    const month = date.getMonth() + 1; 
+    const day = date.getDate(); 
+    return `${month}/${day}`; 
+  };
+
   return (
     <section id="homework">
       <h2>HW Assignments</h2>
@@ -110,7 +118,7 @@ const Homework: React.FC = () => {
                 className="homework-image"
               />
             )}
-            <p><strong>Due Date:</strong> {upcomingAssignment.dueDate}</p>
+            <p><strong>Due Date:</strong> {formatDate(upcomingAssignment.dueDate)}</p>
             <p><strong>Instructions:</strong> {formatInstructions(upcomingAssignment.instructions)}</p>
             {upcomingAssignment.link && (
               <a href={upcomingAssignment.link} target="_blank" rel="noopener noreferrer">Submit Here</a>
@@ -135,7 +143,7 @@ const Homework: React.FC = () => {
                   className="homework-image"
                 />
               )}
-              <p><strong>Due Date:</strong> {homework.dueDate}</p>
+              <p><strong>Due Date:</strong> {formatDate(homework.dueDate)}</p>
               <p><strong>Instructions:</strong> {formatInstructions(homework.instructions)}</p>
               {homework.link && (
                 <a href={homework.link} target="_blank" rel="noopener noreferrer">Submit Here</a>
