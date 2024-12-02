@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { GoogleOAuthProvider, useGoogleLogin, googleLogout } from "@react-oauth/google";
-import axios from "axios"; // Keep only axios import
+import React, { useState } from "react";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import GoogleLoginButton from "./components/GoogleLogin";
 import "./App.css";
 import Homework from "./Homework";
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState("home");
   const [user, setUser] = useState<any>(null);
-  const [profile, setProfile] = useState<{ name: string; email: string; picture: string } | null>(null);
 
   const slideShows = [
     { title: "Lecture 1", link: "https://docs.google.com/presentation/d/1VP9mrEZJZ9ALk2dBwadcGkWBg5twjUbM6VFZ7Fn3Vkk/edit?usp=sharing" },
@@ -20,35 +19,16 @@ const App: React.FC = () => {
 
   const [currentSlideShow, setCurrentSlideShow] = useState(0);
 
-  const login = useGoogleLogin({
-    onSuccess: (response) => setUser(response),
-    onError: (error) => alert("Login Failed: " + error),
-  });
+  const handleLoginSuccess = (userInfo: any) => {
+    setUser(userInfo);
+  };
 
-  useEffect(() => {
-    if (user) {
-      axios
-        .get<{ name: string; email: string; picture: string }>(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
-          headers: {
-            Authorization: `Bearer ${user.access_token}`,
-            Accept: "application/json",
-          },
-        })
-        .then((res) => {
-          setProfile(res.data);
-        })
-        .catch((err) => console.error(err));
-    }
-  }, [user]);
-
-  const logout = () => {
-    googleLogout();
-    setProfile(null);
+  const handleLogout = () => {
     setUser(null);
   };
 
   return (
-    <GoogleOAuthProvider clientId="647779260110-9r21p3vjfk4323hpndin60tav1t56ihq.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
       <div className="App">
         <header className="navbar">
           <nav>
@@ -57,16 +37,24 @@ const App: React.FC = () => {
                 <button onClick={() => setActiveTab("home")}>Home</button>
               </li>
               <li>
-                <button onClick={() => setActiveTab("lecture-slides")}>Lecture Slides</button>
+                <button onClick={() => setActiveTab("lecture-slides")}>
+                  Lecture Slides
+                </button>
               </li>
               <li>
-                <button onClick={() => setActiveTab("attendance")}>Attendance</button>
+                <button onClick={() => setActiveTab("attendance")}>
+                  Attendance
+                </button>
               </li>
               <li>
-                <button onClick={() => setActiveTab("hw-assignments")}>HW Assignments</button>
+                <button onClick={() => setActiveTab("hw-assignments")}>
+                  HW Assignments
+                </button>
               </li>
               <li>
-                <button onClick={() => setActiveTab("mentor-groups")}>Mentor Groups</button>
+                <button onClick={() => setActiveTab("mentor-groups")}>
+                  Mentor Groups
+                </button>
               </li>
               <li>
                 <button onClick={() => setActiveTab("login")}>Login</button>
@@ -79,7 +67,8 @@ const App: React.FC = () => {
             <div className="welcome-section">
               <h1 id="mainHeading">Welcome to the Bootcamp Portal!</h1>
               <p id="underHeading">
-                Your gateway to managing attendance, accessing lecture slides, completing assignments, and connecting with mentors.
+                Your gateway to managing attendance, accessing lecture slides,
+                completing assignments, and connecting with mentors.
               </p>
             </div>
           )}
@@ -95,7 +84,9 @@ const App: React.FC = () => {
                 ))}
               </div>
               <iframe
-                src={`https://docs.google.com/presentation/d/${slideShows[currentSlideShow].link.split("/d/")[1].split("/")[0]}/embed`}
+                src={`https://docs.google.com/presentation/d/${slideShows[currentSlideShow].link
+                  .split("/d/")[1]
+                  .split("/")[0]}/embed`}
                 width="960"
                 height="569"
                 style={{ border: "none" }}
@@ -107,12 +98,12 @@ const App: React.FC = () => {
           {activeTab === "attendance" && (
             <section id="attendance">
               <h2>Attendance</h2>
-              {!profile ? (
+              {!user ? (
                 <p>
-                  Please <button onClick={() => setActiveTab("login")}>log in</button> to view attendance.
+                  You must <button onClick={() => setActiveTab("login")}>log in</button> to access this section.
                 </p>
               ) : (
-                <p>Welcome to Attendance, {profile.name}!</p>
+                <p>Welcome to the Attendance Section!</p>
               )}
             </section>
           )}
@@ -125,22 +116,43 @@ const App: React.FC = () => {
 
           {activeTab === "mentor-groups" && (
             <section id="mentor-groups">
-              <h2>Mentor Groups</h2>
-              <p>Find your mentor and survey link here!</p>
+              <h2>Match with a mentor!</h2>
+              <p>
+                Welcome to the Mentor Groups section! Here, you can find mentors that
+                match your interests and goals. Please take a moment to complete the
+                survey to help us pair you with the best mentor for your journey.
+              </p>
+              <a
+                href="https://forms.gle/EArwmQ1CKQYXxueLA"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: "none",
+                  color: "#1B3B6F",
+                  backgroundColor: "white",
+                  padding: "10px 20px",
+                  borderRadius: "5px",
+                  fontWeight: "bold",
+                  display: "inline-block",
+                  marginTop: "20px",
+                }}
+              >
+                Fill Out the Mentor Survey
+              </a>
             </section>
           )}
 
           {activeTab === "login" && (
             <section id="login">
-              {profile ? (
-                <div>
-                  <h3>Welcome, {profile.name}!</h3>
-                  <img src={profile.picture} alt="User" />
-                  <p>Email: {profile.email}</p>
-                  <button onClick={logout}>Logout</button>
-                </div>
+              {!user ? (
+                <GoogleLoginButton onLoginSuccess={handleLoginSuccess} />
               ) : (
-                <button onClick={() => login()}>Sign in with Google</button>
+                <div>
+                  <h3>Welcome, {user.name}!</h3>
+                  <img src={user.picture} alt="User" />
+                  <p>{user.email}</p>
+                  <button onClick={handleLogout}>Logout</button>
+                </div>
               )}
             </section>
           )}
@@ -151,3 +163,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
