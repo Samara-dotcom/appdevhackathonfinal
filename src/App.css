@@ -1,128 +1,181 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    text-align: center;
-    overflow-x: hidden;
-  }
-  #mainHeading {
-    font-size: 60px;
-    margin-bottom: 40px;
-  }
-  #underHeading {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .navbar {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1em 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1em;
-    margin-right: 2em;
-  }
-  
-  .navbar button {
-    background: none;
-    border: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: color 0.3s, transform 0.3s;
-    padding: 0.5em 1em;
-  }
-  
-  .navbar button:hover {
-    color: #f4a261;
-    transform: scale(1.1);  /* Adds hover effect for scaling */
-  }
-  
-  .welcome-section {
-    padding: 4em 2em;
-  }
-  
-  .welcome-section h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5em;
-  }
-  
-  .welcome-section p {
-    font-size: 1.5rem;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.5;
-  }
-  
-  button {
-    background-color: #1B3B6F;
-    color: white; 
-    font-size: 1rem;
-    padding: 10px 20px;
-    border: none; 
-    border-radius: 5px;
-   cursor: pointer; 
-   transition: background-color 0.3s, transform 0.2s;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-  }
+#mainHeading {
+  font-size: 60px;
+  margin-bottom: 40px;
+}
 
-  button:hover {
-    background-color: #1C7293; 
-    transform: scale(1.05); 
-  }
-  
-  button:focus {
-    outline: none; 
-    box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.5); 
-  }
-  
-  button:active {
-    background-color: #4a89e5; 
-  }
+#underHeading {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  #mentor-groups {
-    padding: 3em 2em;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    margin: 2em auto;
-    max-width: 800px;
-    text-align: center;
+.navbar {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1em 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin-right: 2em;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  padding: 0.5em 1em;
+}
+
+.navbar button:hover {
+  color: #f4a261;
+  transform: scale(1.1);
+}
+
+.welcome-section {
+  padding: 4em 2em;
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+.welcome-section p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+button {
+  background-color: #1B3B6F;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #1C7293;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.5);
+}
+
+button:active {
+  background-color: #4a89e5;
+}
+
+#mentor-groups {
+  padding: 3em 2em;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 2em auto;
+  max-width: 800px;
+  text-align: center;
 }
 
 #mentor-groups h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1em;
-    color: #df84ae;
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+  color: #df84ae;
 }
 
 #mentor-groups p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 1.5em;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
 }
 
 #mentor-groups a {
-    display: inline-block;
-    font-size: 1rem;
-    color: #1C7293;
-    text-decoration: none;
-    background: white;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+  font-size: 1rem;
+  color: #1C7293;
+  text-decoration: none;
+  background: white;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 #mentor-groups a:hover {
-    background: #df86ff;
-    color: white;
-    transform: scale(1.05);
+  background: #df86ff;
+  color: white;
+  transform: scale(1.05);
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+#login h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+}
+
+#login img {
+  border-radius: 50%;
+  margin-bottom: 1em;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#login p {
+  font-size: 1.2rem;
+  margin: 0.5em 0;
+  color: #fff;
+}
+
+#login button {
+  background-color: #f4a261;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#login button:hover {
+  background-color: #e76f51;
+  transform: scale(1.05);
+}
+
+#login button:active {
+  background-color: #d84315;
+}
+
+.google-login-btn {
+  margin: 1em 0;
 }
