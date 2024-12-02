@@ -116,7 +116,29 @@ const App: React.FC = () => {
 
           {activeTab === "mentor-groups" && (
             <section id="mentor-groups">
-              <h2>Mentor Groups</h2>
+              <h2>Match with a mentor!</h2>
+              <p>
+                Welcome to the Mentor Groups section! Here, you can find mentors that
+                match your interests and goals. Please take a moment to complete the
+                survey to help us pair you with the best mentor for your journey.
+              </p>
+              <a
+                href="https://forms.gle/EArwmQ1CKQYXxueLA"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: "none",
+                  color: "#1B3B6F",
+                  backgroundColor: "white",
+                  padding: "10px 20px",
+                  borderRadius: "5px",
+                  fontWeight: "bold",
+                  display: "inline-block",
+                  marginTop: "20px",
+                }}
+              >
+                Fill Out the Mentor Survey
+              </a>
             </section>
           )}
 
