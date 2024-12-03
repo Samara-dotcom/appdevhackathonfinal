@@ -84,6 +84,9 @@ const App: React.FC = () => {
               <p id="underHeading">
                 Your gateway to managing attendance, accessing lecture slides, completing assignments, and connecting with mentors.
               </p>
+              <a href="https://appdevclub.com/" target="_blank">
+                <img src="appdev_favicon.png" alt="app dev logo" id="app_dev_logo"></img>
+              </a>
             </div>
           )}
 
@@ -157,7 +160,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>AI Research</h3>
-        <p><strong>Mentors:</strong>Phillip, Aaquib</p>
+        <p><strong>Mentors:</strong> Phillip, Aaquib</p>
         <div className="members">
           <div className="member">Pranav Krishnamurthy</div>
           <div className="member">Misha Khan</div>
@@ -168,7 +171,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>Quant</h3>
-        <p><strong>Mentors:</strong>Adity, Sam</p>
+        <p><strong>Mentors:</strong> Aditya, Sam</p>
         <div className="members">
           <div className="member">Deep Mistry</div>
           <div className="member">Samara Rahman</div>
@@ -179,7 +182,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>AI Research/SWE</h3>
-        <p><strong>Mentors:</strong>Akshaj, Aidan</p>
+        <p><strong>Mentors:</strong> Akshaj, Aidan</p>
         <div className="members">
           <div className="member">Andy Chen</div>
           <div className="member">Kira Le</div>
@@ -190,7 +193,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>SWE</h3>
-        <p><strong>Mentors:</strong>Brian, Yanit</p>
+        <p><strong>Mentors:</strong> Brian, Yanit</p>
         <div className="members">
           <div className="member">Sawyer Bloom</div>
           <div className="member">Lauren Lipinski</div>
@@ -201,7 +204,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>SWE 2</h3>
-        <p><strong>Mentors:</strong>Maura, Michelle</p>
+        <p><strong>Mentors:</strong> Maura, Michelle</p>
         <div className="members">
           <div className="member">Autumn Anson</div>
           <div className="member">Rukmini Gaddam</div>
@@ -212,7 +215,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>SWE 3</h3>
-        <p><strong>Mentors:</strong>Jayden, Ravi</p>
+        <p><strong>Mentors:</strong> Jayden, Ravi</p>
         <div className="members">
           <div className="member">Kaleb Ward</div>
           <div className="member">Andrew Chen</div>
@@ -223,7 +226,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>SWE/AI Research 2</h3>
-        <p><strong>Mentors:</strong>Nitish, Gavin</p>
+        <p><strong>Mentors:</strong> Nitish, Gavin</p>
         <div className="members">
           <div className="member">Aditi Sethi</div>
           <div className="member">Nithya Gopalakrishnan</div>
@@ -234,7 +237,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>PM/Consulting/SWE</h3>
-        <p><strong>Mentors:</strong>Samai, Matt</p>
+        <p><strong>Mentors:</strong> Samai, Matt</p>
         <div className="members">
           <div className="member">Vir Trivedi</div>
           <div className="member">Riya Laxmi</div>
