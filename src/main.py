@@ -25,7 +25,7 @@ class Attendance(AttendanceBase, table=True): # I return Tweet
 
 # Setting up to connect to the database
 # This stuff is just required for the engine to run
-sqlite_database_name = "attendance.db"
+sqlite_database_name = "../attendance.db"
 sqlite_url = f"sqlite:///{sqlite_database_name}"
 
 # Allowing connections from multiple threads
