@@ -6,17 +6,17 @@ from sqlmodel import Field, Session, SQLModel, create_engine, select
 # Database tables
 # BaseModel -> SQLModel -> TweetBase
 class AttendanceBase(SQLModel): # SQLModel also happens to be a BaseModel, user passes in TweetBase
-    name: str = Field(description="Student name")
-    week1: str = Field(max_length=10, description="Whether or not the student was present in week 1.")
-    week2: str = Field(max_length=10, description="Whether or not the student was present in week 2.")
-    week3: str = Field(max_length=10, description="Whether or not the student was present in week 3.")
-    week4: str = Field(max_length=10, description="Whether or not the student was present in week 4.")
-    week5: str = Field(max_length=10, description="Whether or not the student was present in week 5.")
-    week6: str = Field(max_length=10, description="Whether or not the student was present in week 6.")
-    week7: str = Field(max_length=10, description="Whether or not the student was present in week 7.")
-    week8: str = Field(max_length=10, description="Whether or not the student was present in week 8.")
-    week9: str = Field(max_length=10, description="Whether or not the student was present in week 9.")
-    week10: str = Field(max_length=10, description="Whether or not the student was present in week 10.")
+    Name: str = Field(description="Student name")
+    Week1: str = Field(max_length=10, description="Whether or not the student was present in week 1.")
+    Week2: str = Field(max_length=10, description="Whether or not the student was present in week 2.")
+    Week3: str = Field(max_length=10, description="Whether or not the student was present in week 3.")
+    Week4: str = Field(max_length=10, description="Whether or not the student was present in week 4.")
+    Week5: str = Field(max_length=10, description="Whether or not the student was present in week 5.")
+    Week6: str = Field(max_length=10, description="Whether or not the student was present in week 6.")
+    Week7: str = Field(max_length=10, description="Whether or not the student was present in week 7.")
+    Week8: str = Field(max_length=10, description="Whether or not the student was present in week 8.")
+    Week9: str = Field(max_length=10, description="Whether or not the student was present in week 9.")
+    Week10: str = Field(max_length=10, description="Whether or not the student was present in week 10.")
     
 
 class Attendance(AttendanceBase, table=True): # I return Tweet
@@ -76,7 +76,8 @@ async def get_attendance(
 
 @app.post("/attendance/new", response_model=Attendance)
 async def post_attendance(a: AttendanceBase, session: SessionDep):
-    db_attendance = Attendance.model_validate(a) # creates an ID 
+    db_attendance = Attendance(**a.dict())
+    #db_attendance = Attendance.model_validate(a) # creates an ID 
     session.add(db_attendance)
     session.commit()
     session.refresh(db_attendance)
