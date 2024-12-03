@@ -69,6 +69,9 @@ const App: React.FC = () => {
                 <button onClick={() => setActiveTab("mentor-groups")}>Mentor Groups</button>
               </li>
               <li>
+                <button onClick={() => setActiveTab("resources")}>Resources</button>
+              </li>
+              <li>
                 <button onClick={() => setActiveTab("login")}>Login</button>
               </li>
             </ul>
@@ -138,9 +141,129 @@ const App: React.FC = () => {
     >
       Click here to fill out the mentor survey
     </a>
+
+    {/* Mentor Groups Layout */}
+    <div className="mentor-groups-container">
+      <div className="group-card">
+        <h3>SWE/Quant</h3>
+        <p><strong>Mentors:</strong> Spencer, Phoebe</p>
+        <div className="members">
+          <div className="member">Lakshmee Harivanam</div>
+          <div className="member">Joseph Acquah</div>
+          <div className="member">Milana Dagne</div>
+          <div className="member">Jayant Kammula</div>
+          <div className="member">Uriel Vit-Ojiegbe</div>
+        </div>
+      </div>
+      <div className="group-card">
+        <h3>AI Research</h3>
+        <p><strong>Mentors:</strong>Phillip, Aaquib</p>
+        <div className="members">
+          <div className="member">Pranav Krishnamurthy</div>
+          <div className="member">Misha Khan</div>
+          <div className="member">Cedric Pierre-Louis</div>
+          <div className="member">Harini Thirukonda</div>
+          <div className="member">Emily Lawrence</div>
+        </div>
+      </div>
+      <div className="group-card">
+        <h3>Quant</h3>
+        <p><strong>Mentors:</strong>Adity, Sam</p>
+        <div className="members">
+          <div className="member">Deep Mistry</div>
+          <div className="member">Samara Rahman</div>
+          <div className="member">Yashu Bommareddy</div>
+          <div className="member">Mazin Nadaf</div>
+          <div className="member">Brandon Isbell</div>
+        </div>
+      </div>
+      <div className="group-card">
+        <h3>AI Research/SWE</h3>
+        <p><strong>Mentors:</strong>Akshaj, Aidan</p>
+        <div className="members">
+          <div className="member">Andy Chen</div>
+          <div className="member">Kira Le</div>
+          <div className="member">Lily Ureta</div>
+          <div className="member">Kyle Yin</div>
+          <div className="member">Rachel Li</div>
+        </div>
+      </div>
+      <div className="group-card">
+        <h3>SWE</h3>
+        <p><strong>Mentors:</strong>Brian, Yanit</p>
+        <div className="members">
+          <div className="member">Sawyer Bloom</div>
+          <div className="member">Lauren Lipinski</div>
+          <div className="member">Ryan Selser</div>
+          <div className="member">Natali Oleinik</div>
+          <div className="member">Jacob Demory</div>
+        </div>
+      </div>
+      <div className="group-card">
+        <h3>SWE 2</h3>
+        <p><strong>Mentors:</strong>Maura, Michelle</p>
+        <div className="members">
+          <div className="member">Autumn Anson</div>
+          <div className="member">Rukmini Gaddam</div>
+          <div className="member">Muatasim Miller</div>
+          <div className="member">Nate Zhang</div>
+          <div className="member">Ryan Li</div>
+        </div>
+      </div>
+      <div className="group-card">
+        <h3>SWE 3</h3>
+        <p><strong>Mentors:</strong>Jayden, Ravi</p>
+        <div className="members">
+          <div className="member">Kaleb Ward</div>
+          <div className="member">Andrew Chen</div>
+          <div className="member">Bhavya Tanugula</div>
+          <div className="member">Nimisokan Ojkutu</div>
+          <div className="member">Harleen Green</div>
+        </div>
+      </div>
+      <div className="group-card">
+        <h3>SWE/AI Research 2</h3>
+        <p><strong>Mentors:</strong>Nitish, Gavin</p>
+        <div className="members">
+          <div className="member">Aditi Sethi</div>
+          <div className="member">Nithya Gopalakrishnan</div>
+          <div className="member">Aryan Jain</div>
+          <div className="member">Dhruv Satanur</div>
+          <div className="member">Rushil Juneja</div>
+        </div>
+      </div>
+      <div className="group-card">
+        <h3>PM/Consulting/SWE</h3>
+        <p><strong>Mentors:</strong>Samai, Matt</p>
+        <div className="members">
+          <div className="member">Vir Trivedi</div>
+          <div className="member">Riya Laxmi</div>
+          <div className="member">Madeline Moldrem</div>
+          <div className="member">Samantha Tyles</div>
+          <div className="member">James Miller</div>
+        </div>
+      </div>
+    </div>
   </section>
 )}
 
+
+{activeTab === "resources" && (
+  <section id="resources" className="card">
+    <h2>Office Hours</h2>
+    <h3>Evelyn</h3>
+    <p>Times: Wednesday 3:10 - 4:10, Thursday 5:00 - 6:00</p>
+    <a href="https://us05web.zoom.us/j/3973323282?pwd=bU1uZTVUMHpvMFIzL1EvMFdqTTNadz09" target="_blank" rel="noopener noreferrer">
+      Zoom Link
+    </a>
+    <h3>Kimber</h3>
+    <p>Times: Tuesday 1-2, Thursday 1-3</p>
+    <a href="https://umd.zoom.us/j/5697396597" target="_blank" rel="noopener noreferrer">
+      Zoom Link
+    </a>
+  </section>
+)}
+          
           {activeTab === "login" && (
             <section id="login">
               {profile ? (
