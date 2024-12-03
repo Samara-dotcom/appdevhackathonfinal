@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GoogleOAuthProvider, useGoogleLogin, googleLogout } from "@react-oauth/google";
-import axios from "axios"; // Keep only axios import
+import axios from "axios"; 
 import "./App.css";
 import Homework from "./Homework";
 import { Attendance } from "./Attendance";
@@ -17,6 +17,9 @@ const App: React.FC = () => {
     { title: "Lecture 4", link: "https://docs.google.com/presentation/d/14ooPTPyM4QZPWMBq2sg4NypMQZAHQ4rY5n6CUn6l7zI/edit?usp=sharing" },
     { title: "Lecture 5", link: "https://docs.google.com/presentation/d/1YzEswdGs5zqZMaK8zPCaJl8PiiFFOYDnz2QVHLDAxak/edit?usp=sharing" },
     { title: "Lecture 6", link: "https://docs.google.com/presentation/d/1GTiIFoT1EDLZ0Y9SC6G1f9c1-YZoMM-NMLOC8-0_-lI/edit?usp=sharing" },
+    { title: "Lecture 7", link: "https://docs.google.com/presentation/d/15Na7t8cIfSIBrwDEqQ7BOuvSB5UykhBfiqQstg7lqsg/edit?usp=sharing" },
+    { title: "Lecture 8", link: "https://docs.google.com/presentation/d/1LqK53V6loCTSSouDKSLi0ghzEUEeoyfh49JIIpD04OQ/edit?usp=sharing" },
+    { title: "Lecture 9", link: "https://docs.google.com/presentation/d/1l67FCwXIndPk7by-60jXrStApbmZtccyJQhMuFQl4-c/edit?usp=sharing" },
   ];
 
   const [currentSlideShow, setCurrentSlideShow] = useState(0);

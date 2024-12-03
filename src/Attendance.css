@@ -1,0 +1,59 @@
+#attendance {
+    padding: 3em 2em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 2em auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  #attendance h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    color: #dab7eb;
+  }
+  
+  #attendance p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+  }
+  
+  .attendance-details {
+    margin-top: 2em;
+    text-align: left;
+  }
+  
+  .attendance-details p {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .attendance-details p:hover {
+    background-color: #f0f0f0;
+  }
+  
+  button {
+    font-size: 1rem;
+    color: #1C7293;
+    text-decoration: none;
+    background: white;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background: #df86ff;
+    color: white;
+    transform: scale(1.05);
+  }
+  

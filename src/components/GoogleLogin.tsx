@@ -12,7 +12,7 @@ const GoogleLoginButton: React.FC<{ onLoginSuccess: (user: any) => void }> = ({ 
     })
       .then((res) => res.json())
       .then((userInfo) => {
-        onLoginSuccess(userInfo); // Pass user info to the parent component
+        onLoginSuccess(userInfo); 
         setError("");
       })
       .catch((err) => {

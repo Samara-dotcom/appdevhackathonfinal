@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Attendance.css";
 
 type AttendanceStatus = "Present" | "Absent"
 type AttendanceItem = { name: string; week1: AttendanceStatus; week2: AttendanceStatus; week3: AttendanceStatus; week4: AttendanceStatus; week5: AttendanceStatus; week6: AttendanceStatus; week7: AttendanceStatus; week8: AttendanceStatus; week9: AttendanceStatus; week10: AttendanceStatus;};
