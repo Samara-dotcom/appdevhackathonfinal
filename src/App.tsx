@@ -84,6 +84,9 @@ const App: React.FC = () => {
               <p id="underHeading">
                 Your gateway to managing attendance, accessing lecture slides, completing assignments, and connecting with mentors.
               </p>
+              <a href="https://appdevclub.com/" target="_blank">
+                <img src="appdev_favicon.png" alt="app dev logo" id="app_dev_logo"></img>
+              </a>
             </div>
           )}
 
@@ -168,7 +171,11 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>Quant</h3>
+<<<<<<< HEAD
         <p><strong>Mentors:</strong> Adity, Sam</p>
+=======
+        <p><strong>Mentors:</strong> Aditya, Sam</p>
+>>>>>>> 5edd8cd843e9f3193d5f2882c1cc39ea87e88a54
         <div className="members">
           <div className="member">Deep Mistry</div>
           <div className="member">Samara Rahman</div>
