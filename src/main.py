@@ -91,3 +91,23 @@ def delete_attendance(tweet_id: Annotated[int, Path(ge=0)], session: SessionDep)
     session.delete(tweet)
     session.commit()
     return {"ok": True}
+
+@app.patch("/attendance/{attendance_id}")
+async def update_attendance(
+    attendance_id: int,
+    week: str = Query(..., max_length=10, description="The week to update (e.g., 'week1')."),
+    session: Session = Depends(get_session),
+    status: str = Query(..., description="The attendance status to set (e.g., 'Present' or 'Absent')."),
+    ):
+    attendance = session.get(Attendance, attendance_id)
+    if not attendance:
+        raise HTTPException(status_code=404, detail="Attendance row not found")
+
+    if hasattr(attendance, week):
+        setattr(attendance, week, status)
+        session.add(attendance)
+        session.commit()
+        session.refresh(attendance)
+        return attendance
+    else:
+        raise HTTPException(status_code=400, detail="Invalid week field")
