@@ -1,14 +1,14 @@
 import sqlite3
 
 #Create a connection
-conn = sqlite3.connect("homework.db")
+conn = sqlite3.connect("attendance.db")
 
 #Create a cursor
 cur = conn.cursor()
 #Create a table for attendance/homework
 cur.execute("""CREATE TABLE IF NOT EXISTS
-            homework (Name TEXT, "Week 1" TEXT, "Week 2" TEXT, "Week 3" TEXT, "Week 4" TEXT, 
-            "Week 5" TEXT, "Week 6" TEXT, "Week 7" TEXT, "Week 8" TEXT, "Week 9" TEXT, "Week 10" TEXT)
+            Attendance (Name TEXT, "Week1" TEXT, "Week2" TEXT, "Week3" TEXT, "Week4" TEXT, 
+            "Week5" TEXT, "Week6" TEXT, "Week7" TEXT, "Week8" TEXT, "Week9" TEXT, "Week10" TEXT)
             """)
 #Insert Sample Data
 sample_data_to_insert = [
@@ -18,7 +18,7 @@ sample_data_to_insert = [
     ("Deep", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "No", "No", "No", "No"),
     ("Brandon", "Yes", "Yes", "No", "Yes", "No", "No", "No", "No", "No", "No")
 ]
-cur.executemany("""INSERT INTO homework VALUES
+cur.executemany("""INSERT INTO Attendance VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 """, sample_data_to_insert)
 #Commit and Close
