@@ -70,12 +70,9 @@ def on_startup():
 @app.get("/attendance")
 async def get_attendance(
     session: SessionDep, 
-    limit: Annotated[int|None, Query(gt=0, description="The number of results you would like to return")] = None
     ):
-    if not limit:
         return session.exec(select(Attendance)).all()
-    else:
-        return session.exec(select(Attendance)).fetchmany(limit)
+        
 
 @app.post("/attendance/new", response_model=Attendance)
 async def post_attendance(a: AttendanceBase, session: SessionDep):

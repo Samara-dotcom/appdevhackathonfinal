@@ -171,11 +171,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>Quant</h3>
-<<<<<<< HEAD
-        <p><strong>Mentors:</strong> Adity, Sam</p>
-=======
         <p><strong>Mentors:</strong> Aditya, Sam</p>
->>>>>>> 5edd8cd843e9f3193d5f2882c1cc39ea87e88a54
         <div className="members">
           <div className="member">Deep Mistry</div>
           <div className="member">Samara Rahman</div>
