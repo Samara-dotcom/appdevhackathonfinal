@@ -157,7 +157,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>AI Research</h3>
-        <p><strong>Mentors:</strong>Phillip, Aaquib</p>
+        <p><strong>Mentors:</strong> Phillip, Aaquib</p>
         <div className="members">
           <div className="member">Pranav Krishnamurthy</div>
           <div className="member">Misha Khan</div>
@@ -168,7 +168,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>Quant</h3>
-        <p><strong>Mentors:</strong>Adity, Sam</p>
+        <p><strong>Mentors:</strong> Adity, Sam</p>
         <div className="members">
           <div className="member">Deep Mistry</div>
           <div className="member">Samara Rahman</div>
@@ -179,7 +179,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>AI Research/SWE</h3>
-        <p><strong>Mentors:</strong>Akshaj, Aidan</p>
+        <p><strong>Mentors:</strong> Akshaj, Aidan</p>
         <div className="members">
           <div className="member">Andy Chen</div>
           <div className="member">Kira Le</div>
@@ -190,7 +190,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>SWE</h3>
-        <p><strong>Mentors:</strong>Brian, Yanit</p>
+        <p><strong>Mentors:</strong> Brian, Yanit</p>
         <div className="members">
           <div className="member">Sawyer Bloom</div>
           <div className="member">Lauren Lipinski</div>
@@ -201,7 +201,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>SWE 2</h3>
-        <p><strong>Mentors:</strong>Maura, Michelle</p>
+        <p><strong>Mentors:</strong> Maura, Michelle</p>
         <div className="members">
           <div className="member">Autumn Anson</div>
           <div className="member">Rukmini Gaddam</div>
@@ -212,7 +212,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>SWE 3</h3>
-        <p><strong>Mentors:</strong>Jayden, Ravi</p>
+        <p><strong>Mentors:</strong> Jayden, Ravi</p>
         <div className="members">
           <div className="member">Kaleb Ward</div>
           <div className="member">Andrew Chen</div>
@@ -223,7 +223,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>SWE/AI Research 2</h3>
-        <p><strong>Mentors:</strong>Nitish, Gavin</p>
+        <p><strong>Mentors:</strong> Nitish, Gavin</p>
         <div className="members">
           <div className="member">Aditi Sethi</div>
           <div className="member">Nithya Gopalakrishnan</div>
@@ -234,7 +234,7 @@ const App: React.FC = () => {
       </div>
       <div className="group-card">
         <h3>PM/Consulting/SWE</h3>
-        <p><strong>Mentors:</strong>Samai, Matt</p>
+        <p><strong>Mentors:</strong> Samai, Matt</p>
         <div className="members">
           <div className="member">Vir Trivedi</div>
           <div className="member">Riya Laxmi</div>
@@ -249,19 +249,69 @@ const App: React.FC = () => {
 
 
 {activeTab === "resources" && (
-  <section id="resources" className="card">
-    <h2>Office Hours</h2>
-    <h3>Evelyn</h3>
-    <p>Times: Wednesday 3:10 - 4:10, Thursday 5:00 - 6:00</p>
-    <a href="https://us05web.zoom.us/j/3973323282?pwd=bU1uZTVUMHpvMFIzL1EvMFdqTTNadz09" target="_blank" rel="noopener noreferrer">
-      Zoom Link
-    </a>
-    <h3>Kimber</h3>
-    <p>Times: Tuesday 1-2, Thursday 1-3</p>
-    <a href="https://umd.zoom.us/j/5697396597" target="_blank" rel="noopener noreferrer">
-      Zoom Link
-    </a>
-  </section>
+  <>
+    <section id="office-hours" className="card">
+      <h2>Office Hours</h2>
+      <h3>Evelyn</h3>
+      <p>Times: Wednesday 3:10 - 4:10, Thursday 5:00 - 6:00</p>
+      <a href="https://us05web.zoom.us/j/3973323282?pwd=bU1uZTVUMHpvMFIzL1EvMFdqTTNadz09" target="_blank" rel="noopener noreferrer">
+        Zoom Link
+      </a>
+      <h3>Kimber</h3>
+      <p>Times: Tuesday 1-2, Thursday 1-3</p>
+      <a href="https://umd.zoom.us/j/5697396597" target="_blank" rel="noopener noreferrer">
+        Zoom Link
+      </a>
+    </section>
+    <section id="lecture-recordings" className="card">
+      <h2>Lecture Recordings</h2>
+      <strong>Lecture 1: </strong>
+      <a href="https://umd.zoom.us/rec/share/9hW7NpHQ4nNouT6DAj6vWsIf9ahn6oHv4IroPvjLq3R98wfPNyVMzgJqWQ4nEIG4.HTyCMn3NAWB-ETkj?startTime=1727824735000" target="_blank" rel="noopener noreferrer">
+        Recording Link
+      </a>
+      <p>Passcode: u98!&ye*</p>
+      <strong>Lecture 2: </strong>
+      <a href="https://umd.zoom.us/rec/share/SfirrOZAemFf_xSm3zhZq7j_3G9vTJfKWoXr4YIJD7V3pxjMpQe_AIjGT-Wk3Tdv.R_nKA8KwWqv8umwS?startTime=1728428448000" target="_blank" rel="noopener noreferrer">
+        Recording Link
+      </a>
+      <p>Passcode: p6jk0se$</p>
+      <strong>Lecture 3: </strong>
+      <a href="https://umd.zoom.us/rec/share/Rl_BFUApl78S6omhJPRFLdM2bqNJOC5NWiJkWk9nDVe9G6wf54-EZCFnD8WbokIK.aHGXOgs6ZGmg7pad?startTime=1729033180000" target="_blank" rel="noopener noreferrer">
+        Recording Link
+      </a>
+      <p>Passcode: zP8i1D=B</p>
+      <strong>Lecture 4: </strong>
+      <a href="https://umd.zoom.us/rec/share/feRHep0QqN7yi6SJz8PwaQ6LrFP8BRJ96LSAf2lEhIxLeojaea27pPct65YuCS1-.sj_MOivR-ZpXWfqg?startTime=1729638243000" target="_blank" rel="noopener noreferrer">
+        Recording Link
+      </a>
+      <p>Passcode: A$NCN^j9</p>
+      <strong>Lecture 5: </strong>
+      <a href="https://umd.zoom.us/rec/share/XEmxDC_2pexSnHkmHWfE2u828DWpQlhQNtxyV9gpkK1yCh0Hnj6M1A2Sdji7Z9DM.valW4Jz4qkEF0I0H?startTime=1730243323000" target="_blank" rel="noopener noreferrer">
+        Recording Link
+      </a>
+      <p>Passcode: $vv*7CV1</p>
+      <strong>Lecture 6: </strong>
+      <a href="https://umd.zoom.us/rec/share/1pUBQsed08aIyCtsS3NH3ZVDB23Uuco46RHwzb-M_qNZfkJgdgUOYx4krB2bQV2e.4QqU0j8o1gXApSNq?startTime=1730851409000" target="_blank" rel="noopener noreferrer">
+        Recording Link
+      </a>
+      <p>Passcode: t1tdsaB$</p>
+      <strong>Lecture 7: </strong>
+      <a href="https://umd.zoom.us/rec/share/NW59HtWPrUYmRUSeorA0w8KMK-Gy9nqpLxNg1cNvrEqsuPZPaPfc1KZvhJHVqiS0.PAhYdSI7BvAl57K-" target="_blank" rel="noopener noreferrer">
+        Recording Link
+      </a>
+      <p>Passcode: XH?39WjJ</p>
+      <strong>Lecture 8: </strong>
+      <a href="https://umd.zoom.us/rec/share/SWr8PIE4MVLac8AzSP7EmW_AM9N8-sjc68MYy2F2M87OY3WhmFtOGQfPxrfk2lS6.Co_GWJZzm0Tdkbe2?startTime=1732063816000" target="_blank" rel="noopener noreferrer">
+        Recording Link
+      </a>
+      <p>Passcode: e6?jK*LJ</p>
+      <strong>Lecture 9: </strong>
+      <a href="https://umd.zoom.us/rec/share/F1ZDr9KfH66reoF2jEuc7oBpGe-JLRhWeE6mPrNep84GN0NL3PG3sWJTz7FVEP7y.tpIzM4OLwsDI9ef1?startTime=1732665622000" target="_blank" rel="noopener noreferrer">
+        Recording Link
+      </a>
+      <p>Passcode: #J75!Y?8</p>
+    </section>
+  </>
 )}
           
           {activeTab === "login" && (
