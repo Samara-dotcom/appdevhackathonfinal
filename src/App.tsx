@@ -3,6 +3,7 @@ import { GoogleOAuthProvider, useGoogleLogin, googleLogout } from "@react-oauth/
 import axios from "axios"; // Keep only axios import
 import "./App.css";
 import Homework from "./Homework";
+import { Attendance } from "./Attendance";
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState("home");
@@ -112,14 +113,7 @@ const App: React.FC = () => {
 
           {activeTab === "attendance" && (
             <section id="attendance">
-              <h2>Attendance</h2>
-              {!profile ? (
-                <p>
-                  Please <button onClick={() => setActiveTab("login")}>log in</button> to view attendance.
-                </p>
-              ) : (
-                <p>Welcome to Attendance, {profile.name}!</p>
-              )}
+             <Attendance profile={profile} setActiveTab={setActiveTab} />
             </section>
           )}
 
